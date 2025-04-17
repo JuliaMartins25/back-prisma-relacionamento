@@ -7,6 +7,7 @@ class PersonagemModel {
       orderBy: {
         createdAt: "desc",
       },
+      
     });
 
     console.log(personagens);

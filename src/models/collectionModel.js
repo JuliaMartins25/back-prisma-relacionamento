@@ -7,9 +7,12 @@ class CollectionModel {
       orderBy: {
         createdAt: "desc",
       },
+      include: {
+        cards: true,
+      },
     });
 
-    console.log(colecoes);
+    // console.log(colecoes);
 
     return colecoes;
   }
@@ -25,31 +28,21 @@ class CollectionModel {
     return personagem;
   }
 
-  // Criar um novo personagem
+  // Criar um nova coleção
   async create(
-    title,
+    name,
     description,
-    episodes,
     releaseYear,
-    studio,
-    genres,
-    rating,
-    imageUrl
   ) {
-    const newPersonagem = await prisma.personagem.create({
+    const newCollection = await prisma.collection.create({
       data: {
-        title,
+        name,
         description,
-        episodes,
         releaseYear,
-        studio,
-        genres,
-        rating,
-        imageUrl,
       },
     });
 
-    return newPersonagem;
+    return newCollection;
   }
 
   // Atualizar um personagem

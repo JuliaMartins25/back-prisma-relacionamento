@@ -8,11 +8,10 @@ const collectionRouter = express.Router();
 collectionRouter.get("/", collectionController.getAllCollections);
 
 // GET /personagens/:id - Obter um Personagem pelo ID
-//collectionRouter.get("/:id", PersonagemController.getPersonagemById);
+//collectionRouter.get("/:id", collectionController.get);
 
 // POST /personagens - Criar um novo Personagem
-
-//collectionRouter.post("/", PersonagemController.createPersonagem);
+collectionRouter.post("/", collectionController.createCollection);
 
 // PUT /personagens/:id - Atualizar um Personagem
 //collectionRouter.put("/:id", PersonagemController.updatePersonagem);
